@@ -1,13 +1,18 @@
 import React from "react";
 
-import { Wrapper, Heading } from "./styles";
+import Header from "../../components/Header";
 
-const ComingSoon: React.FC = () => {
+import { Wrapper, Container, Main } from "./styles";
+
+const Following: React.FC = () => {
   return (
     <Wrapper>
-      <Heading>Comming soon</Heading>
+      <Container>
+        <Header />
+        <Main />
+      </Container>
     </Wrapper>
   );
 };
 
-export default ComingSoon;
+export default Following;

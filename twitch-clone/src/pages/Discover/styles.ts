@@ -13,16 +13,17 @@ export const Wrapper = styled.SafeAreaView`
   padding-top: ${statusBarHeight + "px"};
 `;
 
-export const Heading = styled.Text`
-  color: ${colors.purple};
-  font-family: roboto_500;
-  font-size: 30px;
-`;
-
 export const Container = styled.View`
   padding-left: 14px;
 `;
 
 export const Main = styled.View`
   padding-left: 14px;
+`;
+
+export const Heading = styled.Text`
+  color: ${colors.purple};
+  font-family: roboto_500;
+  font-size: 30px;
+  margin-top: 28px;
 `;

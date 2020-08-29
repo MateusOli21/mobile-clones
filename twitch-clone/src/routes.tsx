@@ -5,6 +5,8 @@ import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import { Ionicons, MaterialCommunityIcons } from "@expo/vector-icons";
 
 import Following from "./pages/Following";
+import Discover from "./pages/Discover";
+
 import colors from "./styles/colors";
 
 const { Navigator, Screen } = createBottomTabNavigator();
@@ -53,7 +55,7 @@ const Routes: React.FC = () => (
       />
       <Screen
         name="Discover"
-        component={View}
+        component={Discover}
         options={{
           tabBarIcon: ({ size, focused }) => {
             return (

@@ -24,5 +24,5 @@ export const Container = styled.View`
 `;
 
 export const Main = styled.View`
-  padding-left: 14px;
+  padding-bottom: 50px;
 `;

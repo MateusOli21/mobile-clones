@@ -10,6 +10,8 @@ export const AvatarImg = styled.Image`
   width: 40px;
   height: 40px;
   border-radius: 20px;
+  border-color: #1777f2;
+  border-width: ${({ isStory }) => (isStory ? "3px" : 0)};
 `;
 
 export const OnlineDot = styled.View`

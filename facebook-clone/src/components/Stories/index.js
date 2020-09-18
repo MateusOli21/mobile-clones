@@ -1,7 +1,7 @@
 import React from "react";
 import { ScrollView } from "react-native";
 
-import { Container } from "./styles";
+import { Container, BottomDivider } from "./styles";
 import StoryCard from "../StoryCard";
 
 const Stories = () => {
@@ -22,20 +22,23 @@ const Stories = () => {
   ];
 
   return (
-    <Container>
-      <ScrollView horizontal showsHorizontalScrollIndicator={false}>
-        <StoryCard isAddStory storySrc={user1} storyText="Add to story" />
+    <>
+      <Container>
+        <ScrollView horizontal showsHorizontalScrollIndicator={false}>
+          <StoryCard isAddStory storySrc={user1} storyText="Add to story" />
 
-        {usersStories.map((story, index) => (
-          <StoryCard
-            key={index}
-            storySrc={story.storySrc}
-            userSrc={story.userSrc}
-            storyText={story.storyText}
-          />
-        ))}
-      </ScrollView>
-    </Container>
+          {usersStories.map((story, index) => (
+            <StoryCard
+              key={index}
+              storySrc={story.storySrc}
+              userSrc={story.userSrc}
+              storyText={story.storyText}
+            />
+          ))}
+        </ScrollView>
+      </Container>
+      <BottomDivider />
+    </>
   );
 };
 

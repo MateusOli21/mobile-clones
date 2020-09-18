@@ -6,6 +6,7 @@ import AppBar from "./components/AppBar";
 import ToolBar from "./components/ToolBar";
 import Users from "./components/Users";
 import Stories from "./components/Stories";
+import Feed from "./components/Feed";
 
 const Container = styled.SafeAreaView`
   flex: 1;
@@ -22,6 +23,7 @@ export default function App() {
           <ToolBar />
           <Users />
           <Stories />
+          <Feed />
         </ScrollView>
       </Container>
     </>

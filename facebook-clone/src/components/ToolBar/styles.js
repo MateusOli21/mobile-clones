@@ -27,6 +27,6 @@ export const Divider = styled.View`
 
 export const BottomDivider = styled.View`
   width: 100%;
-  height: 9px;
+  height: 7px;
   background: #f0f2f5;
 `;

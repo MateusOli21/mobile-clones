@@ -1,11 +1,12 @@
 import React from "react";
 
-import { Container, User } from "./styles";
+import { Container, AvatarImg, OnlineDot } from "./styles";
 
-const Avatar = ({ source }) => {
+const Avatar = ({ source, isOnline }) => {
   return (
     <Container>
-      <User source={source} />
+      <AvatarImg source={source} />
+      {isOnline && <OnlineDot />}
     </Container>
   );
 };

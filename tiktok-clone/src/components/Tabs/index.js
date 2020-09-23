@@ -1,6 +1,11 @@
 import React from "react";
 import { Feather } from "@expo/vector-icons";
 
+import homeIcon from "../../../assets/icons/home.png";
+import discoverIcon from "../../../assets/icons/discover.png";
+import messageIcon from "../../../assets/icons/message.png";
+import profileIcon from "../../../assets/icons/profile.png";
+
 import {
   Container,
   MenuOption,
@@ -11,14 +16,6 @@ import {
 } from "./styles";
 
 const Tabs = () => {
-  const homeIcon = require("../../../assets/icons/home.png");
-  const discoverIcon = require("../../../assets/icons/discover.png");
-  const messageIcon = require("../../../assets/icons/message.png");
-  const profileIcon = require("../../../assets/icons/profile.png");
-
-  const primaryColor = "#f42365";
-  const secundaryColor = "#37d7cf";
-
   return (
     <Container>
       <MenuOption>
@@ -35,7 +32,7 @@ const Tabs = () => {
         <Border
           start={{ x: 1, y: 0 }}
           locations={[0, 0.5, 0.5, 1]}
-          colors={[primaryColor, primaryColor, secundaryColor, secundaryColor]}
+          colors={["#f42365", "#f42365", "#37d7cf", "#37d7cf"]}
         >
           <Button>
             <Feather name="plus" size={20} />

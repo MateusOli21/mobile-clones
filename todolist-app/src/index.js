@@ -1,10 +1,15 @@
 import React from "react";
-import { Text, View } from "react-native";
+
+import Logo from "./components/Logo";
+import AddTodo from "./components/AddTodo";
+
+import { Container } from "./styles/main";
 
 export default function Main() {
   return (
-    <View>
-      <Text>Open up App.js to start working on your app!</Text>
-    </View>
+    <Container>
+      <Logo />
+      <AddTodo />
+    </Container>
   );
 }

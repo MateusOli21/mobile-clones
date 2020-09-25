@@ -1,21 +1,23 @@
 import React from "react";
+import { Ionicons } from "@expo/vector-icons";
 
-import TaskCounter from "../TaskCounter";
+import colors from "../../styles/colors";
+import { Container, CheckTaskButton, Text } from "./styles";
 
-import { Container, Text } from "./styles";
-
-const TodoItem = ({ list }) => {
-  const completedCount = list.todos.filter((todo) => todo.completed).length;
-  const remainingCount = list.todos.length - completedCount;
-
+const TaskItem = ({ todo }) => {
   return (
-    <Container bgColor={list.color}>
-      <Text>{list?.name}</Text>
+    <Container>
+      <CheckTaskButton>
+        <Ionicons
+          name={todo.completed ? "ios-square" : "ios-square-outline"}
+          size={24}
+          color={colors.gray}
+        />
+      </CheckTaskButton>
 
-      <TaskCounter count={completedCount} subtitle="completos" />
-      <TaskCounter count={remainingCount} subtitle="restantes" />
+      <Text isCompleted={todo.completed}>{todo.title}</Text>
     </Container>
   );
 };
 
-export default TodoItem;
+export default TaskItem;

@@ -1,7 +1,7 @@
 import React from "react";
 import { FlatList } from "react-native";
 
-import TodoItem from "../TodoItem";
+import TodoListItem from "../TodoListItem";
 
 import { Container } from "./styles";
 
@@ -13,7 +13,7 @@ const TodoList = ({ data }) => {
         keyExtractor={(item) => item.name}
         horizontal={true}
         showsHorizontalScrollIndicator={false}
-        renderItem={({ item }) => <TodoItem list={item} />}
+        renderItem={({ item }) => <TodoListItem list={item} />}
       />
     </Container>
   );

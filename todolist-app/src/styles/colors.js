@@ -3,6 +3,8 @@ export default {
   lightBlue: "#a7cbd9",
   black: "#2d3436",
   white: "#fff",
+  gray: "#a4a4a4",
+  lightGray: "#cacaca",
 };
 
 export const backgroundColors = [

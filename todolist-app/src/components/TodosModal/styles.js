@@ -9,7 +9,7 @@ export const Container = styled.SafeAreaView`
 
 export const CloseModal = styled.TouchableOpacity`
   position: absolute;
-  top: 60px;
+  top: 40px;
   right: 32px;
   z-index: 10;
 `;
@@ -42,10 +42,11 @@ export const Section = styled.View`
 `;
 
 export const TasksList = styled.FlatList`
-  padding: 48px 32px;
+  margin-top: 24px;
+  padding: 0px 32px;
 `;
 
-export const Footer = styled.KeyboardAvoidingView`
+export const Footer = styled.View`
   flex: 1;
   align-self: stretch;
   padding: 0 32px;

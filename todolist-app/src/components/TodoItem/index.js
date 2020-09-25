@@ -4,10 +4,10 @@ import { Ionicons } from "@expo/vector-icons";
 import colors from "../../styles/colors";
 import { Container, CheckTaskButton, Text } from "./styles";
 
-const TaskItem = ({ todo }) => {
+const TaskItem = ({ todo, index, toggleCompletedTodo }) => {
   return (
     <Container>
-      <CheckTaskButton>
+      <CheckTaskButton onPress={() => toggleCompletedTodo(index)}>
         <Ionicons
           name={todo.completed ? "ios-square" : "ios-square-outline"}
           size={24}

@@ -1,5 +1,6 @@
 export default [
   {
+    id: 1,
     name: "Planejar viagem",
     color: "#24a6d9",
     todos: [
@@ -22,6 +23,7 @@ export default [
     ],
   },
   {
+    id: 2,
     name: "Recados",
     color: "#8022d9",
     todos: [
@@ -40,6 +42,7 @@ export default [
     ],
   },
   {
+    id: 3,
     name: "Festa de aniversário",
     color: "#585bd9",
     todos: [

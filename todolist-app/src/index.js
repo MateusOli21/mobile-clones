@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Modal, View, Text } from "react-native";
+import { Modal } from "react-native";
 
 import tempData from "./tempData";
 import Logo from "./components/Logo";
@@ -11,22 +11,34 @@ import { Container } from "./styles/main";
 
 export default function Main() {
   const [visibleModal, setVisibleModal] = useState(false);
+  const [lists, setLists] = useState(tempData);
 
-  const closeModal = () => setVisibleModal(false);
-  const openModal = () => setVisibleModal(true);
+  const toggleVisibleModal = () => setVisibleModal(!visibleModal);
+
+  const addList = (list) => {
+    setLists([...lists, { ...list, id: lists.length + 1, todos: [] }]);
+  };
+
+  const updateList = (list) => {
+    setLists(
+      lists.map((item) => {
+        return item.id === list.id ? list : item;
+      })
+    );
+  };
 
   return (
     <Container>
       <Modal
         animationType="slide"
         visible={visibleModal}
-        onRequestClose={closeModal}
+        onRequestClose={toggleVisibleModal}
       >
-        <AddListModal closeModal={closeModal} />
+        <AddListModal closeModal={toggleVisibleModal} addList={addList} />
       </Modal>
       <Logo />
-      <AddTodo openModal={openModal} />
-      <TodoList data={tempData} />
+      <AddTodo openModal={toggleVisibleModal} />
+      <TodoList data={lists} updateList={updateList} />
     </Container>
   );
 }

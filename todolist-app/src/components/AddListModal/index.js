@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import { AntDesign } from "@expo/vector-icons";
 
-import tempData from "../../tempData";
 import colors, { backgroundColors } from "../../styles/colors";
 
 import {
@@ -16,18 +15,18 @@ import {
   ColorSelect,
 } from "./styles";
 
-const AddListModal = ({ closeModal }) => {
+const AddListModal = ({ closeModal, addList }) => {
   const [newListName, setNewListName] = useState("");
   const [newListColor, setNewListColor] = useState(backgroundColors[0]);
 
   const createNewTodo = () => {
     if (newListName) {
-      tempData.push({
-        name: newListName,
-        color: newListColor,
-        todos: [],
-      });
+      const name = newListName;
+      const color = newListColor;
 
+      const list = { name, color };
+
+      addList(list);
       setNewListName("");
       closeModal();
     }

@@ -5,7 +5,7 @@ import TodoListItem from "../TodoListItem";
 
 import { Container } from "./styles";
 
-const TodoList = ({ data }) => {
+const TodoList = ({ data, updateList }) => {
   return (
     <Container>
       <FlatList
@@ -13,7 +13,10 @@ const TodoList = ({ data }) => {
         keyExtractor={(item) => item.name}
         horizontal={true}
         showsHorizontalScrollIndicator={false}
-        renderItem={({ item }) => <TodoListItem list={item} />}
+        keyboardShouldPersistTaps="always"
+        renderItem={({ item }) => (
+          <TodoListItem list={item} updateList={updateList} />
+        )}
       />
     </Container>
   );

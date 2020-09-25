@@ -6,7 +6,7 @@ import TodosModal from "../TodosModal";
 
 import { Container, Text } from "./styles";
 
-const TodoListItem = ({ list }) => {
+const TodoListItem = ({ list, updateList }) => {
   const [showTasks, setShowTasks] = useState(false);
 
   const toggleShowTasks = () => setShowTasks(!showTasks);
@@ -21,7 +21,11 @@ const TodoListItem = ({ list }) => {
         visible={showTasks}
         onRequestClose={toggleShowTasks}
       >
-        <TodosModal list={list} toggleShowTasks={toggleShowTasks} />
+        <TodosModal
+          list={list}
+          toggleShowTasks={toggleShowTasks}
+          updateList={updateList}
+        />
       </Modal>
 
       <Container bgColor={list.color}>

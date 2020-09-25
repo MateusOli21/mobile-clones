@@ -1,15 +1,16 @@
 import React from "react";
-import { Text, FlatList } from "react-native";
+import { FlatList } from "react-native";
+
+import TodoItem from "../TodoItem";
 
 import { Container } from "./styles";
-import TodoItem from "../TodoItem";
 
 const TodoList = ({ data }) => {
   return (
     <Container>
       <FlatList
         data={data}
-        keyExtractor={(todo) => todo.name}
+        keyExtractor={(item) => item.name}
         horizontal={true}
         showsHorizontalScrollIndicator={false}
         renderItem={({ item }) => <TodoItem list={item} />}

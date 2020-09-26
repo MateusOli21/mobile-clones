@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Modal } from "react-native";
+import { Modal, ActivityIndicator } from "react-native";
 
 import tempData from "./tempData";
 import Logo from "./components/Logo";
@@ -7,10 +7,12 @@ import AddTodo from "./components/AddTodo";
 import TodoList from "./components/TodoList";
 import AddListModal from "./components/AddListModal";
 
+import colors from "./styles/colors";
 import { Container } from "./styles/main";
 
 export default function Main() {
   const [visibleModal, setVisibleModal] = useState(false);
+  const [loading, setLoading] = useState(false);
   const [lists, setLists] = useState(tempData);
 
   const toggleVisibleModal = () => setVisibleModal(!visibleModal);
@@ -26,6 +28,14 @@ export default function Main() {
       })
     );
   };
+
+  if (loading) {
+    return (
+      <Container>
+        <ActivityIndicator size="large" color={colors.blue} />
+      </Container>
+    );
+  }
 
   return (
     <Container>

@@ -10,7 +10,7 @@ const TodoList = ({ data, updateList }) => {
     <Container>
       <FlatList
         data={data}
-        keyExtractor={(item) => item.name}
+        keyExtractor={(item) => item.id}
         horizontal={true}
         showsHorizontalScrollIndicator={false}
         keyboardShouldPersistTaps="always"

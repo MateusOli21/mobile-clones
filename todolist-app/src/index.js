@@ -1,6 +1,7 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Modal, ActivityIndicator } from "react-native";
 
+import firebaseAPI from "./firebase/api";
 import tempData from "./tempData";
 import Logo from "./components/Logo";
 import AddTodo from "./components/AddTodo";
@@ -13,7 +14,22 @@ import { Container } from "./styles/main";
 export default function Main() {
   const [visibleModal, setVisibleModal] = useState(false);
   const [loading, setLoading] = useState(false);
-  const [lists, setLists] = useState(tempData);
+  const [lists, setLists] = useState(null);
+  const [user, setUser] = useState(null);
+
+  useEffect(() => {
+    const getUser = async () => {
+      const userId = await firebaseAPI.signIn(setUser);
+      setUser(userId);
+
+      // if (userId) {
+      // const temp = await firebaseAPI.getLists(userId, setLists);
+      // setLists(loadedLists);
+      // }
+    };
+
+    getUser();
+  }, []);
 
   const toggleVisibleModal = () => setVisibleModal(!visibleModal);
 

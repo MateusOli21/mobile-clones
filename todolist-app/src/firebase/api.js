@@ -2,23 +2,23 @@ import { firebase, firestore, firebaseAuth } from "./config";
 
 export default {
   signIn: async () => {
-    let user;
+    let userId;
 
     await firebaseAuth
       .then((result) => {
-        user = result.user.uid;
+        userId = result.user.uid;
       })
       .catch((error) => alert(error));
 
-    return user;
+    return userId;
   },
 
   getLists: async (userId) => {
-    let lists = [];
+    let tempLists = [];
 
     await firestore
       .collection("users")
-      .doc(userId)
+      .doc("Z6GFk93BxuZYiCa0Ez59DJ1U8TC2")
       .collection("lists")
       .onSnapshot((result) => {
         result.forEach((list) => {
@@ -26,6 +26,8 @@ export default {
         });
       });
 
-    return lists;
+    // setLists(lists);
+
+    return tempLists;
   },
 };

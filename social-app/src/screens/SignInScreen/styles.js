@@ -7,3 +7,11 @@ export const Container = styled.View`
 export const Main = styled.View`
   margin-top: 190px;
 `;
+
+export const AuthSection = styled.View`
+  margin: 52px 32px 32px;
+`;
+
+export const SignUpOption = styled.TouchableOpacity`
+  margin-top: 16px;
+`;

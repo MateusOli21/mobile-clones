@@ -5,6 +5,7 @@ import HeaderGraphics from "../../components/HeaderGraphics";
 import Text from "../../components/Text";
 import InputField from "../../components/InputField";
 import SignButton from "../../components/SignButton";
+import PhotoPicker from "../../components/PhotoPicker";
 
 import { Container, Main, AuthSection, SignInOption } from "./styles";
 
@@ -12,6 +13,7 @@ const SignUpScreen = ({ navigation }) => {
   const [username, setUsername] = useState(null);
   const [email, setEmail] = useState(null);
   const [password, setPassword] = useState(null);
+  const [profilePhoto, setProfilePhoto] = useState(null);
 
   const navigateToSignInScreen = () => navigation.navigate("SignIn");
 
@@ -24,6 +26,11 @@ const SignUpScreen = ({ navigation }) => {
         <Text title semi center>
           Crie uma conta
         </Text>
+
+        <PhotoPicker
+          profilePhoto={profilePhoto}
+          setProfilePhoto={setProfilePhoto}
+        />
 
         <AuthSection>
           <InputField

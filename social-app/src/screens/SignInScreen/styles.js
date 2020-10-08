@@ -9,7 +9,7 @@ export const Main = styled.View`
 `;
 
 export const AuthSection = styled.View`
-  margin: 52px 32px 32px;
+  margin: 52px 32px 12px;
 `;
 
 export const SignUpOption = styled.TouchableOpacity`

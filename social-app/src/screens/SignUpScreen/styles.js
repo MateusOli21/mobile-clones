@@ -5,11 +5,11 @@ export const Container = styled.View`
 `;
 
 export const Main = styled.View`
-  margin-top: 190px;
+  margin-top: 160px;
 `;
 
 export const AuthSection = styled.View`
-  margin: 52px 32px 32px;
+  margin: 32px 32px 12px;
 `;
 
 export const SignInOption = styled.TouchableOpacity`

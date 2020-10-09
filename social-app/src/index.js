@@ -1,11 +1,18 @@
 import React from "react";
 import { NavigationContainer } from "@react-navigation/native";
+
 import AppStackScreens from "./stacks/AppStackScreens";
+import { UserProvider } from "./context/UserContext";
+import { FirebaseProvider } from "./context/FirebaseContex";
 
 export default Main = () => {
   return (
-    <NavigationContainer>
-      <AppStackScreens />
-    </NavigationContainer>
+    <FirebaseProvider>
+      <UserProvider>
+        <NavigationContainer>
+          <AppStackScreens />
+        </NavigationContainer>
+      </UserProvider>
+    </FirebaseProvider>
   );
 };

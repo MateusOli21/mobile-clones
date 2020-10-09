@@ -12,11 +12,11 @@ var firebaseConfig = {
   appId: "1:47205471704:web:de5d7f304e8e12d2ba4ead",
 };
 
-const firebaseApp = firebase.initializeApp(firebaseConfig);
+// const firebaseApp = firebase.initializeApp(firebaseConfig);
 
-const firestore = firebaseApp.firestore();
-const firebaseAuth = firebaseApp.auth();
+// const firestore = firebaseApp.firestore();
+// const firebaseAuth = firebaseApp.auth();
 
 const provider = new firebase.auth.GoogleAuthProvider();
 
-export { firebase, firestore, firebaseAuth, provider };
+export { firebase, provider, firebaseConfig };

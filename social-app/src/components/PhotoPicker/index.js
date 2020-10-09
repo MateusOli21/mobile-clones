@@ -25,11 +25,9 @@ const PhotoPicker = ({ profilePhoto, setProfilePhoto }) => {
       });
 
       if (!result.cancelled) {
-        setProfilePhoto(result.u);
+        setProfilePhoto(result.uri);
       }
-    } catch (error) {
-      console.log("error");
-    }
+    } catch (error) {}
   };
 
   const handleAddProfilePhoto = async () => {

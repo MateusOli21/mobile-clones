@@ -9,9 +9,7 @@ const LoadingScreen = () => {
   const [_, setUser] = useUserContext();
 
   useEffect(() => {
-    setTimeout(async () => {
-      setUser((state) => ({ ...state, isLoggedIn: false }));
-    }, 1500);
+    setUser((state) => ({ ...state, isLoggedIn: false }));
   }, []);
 
   return (

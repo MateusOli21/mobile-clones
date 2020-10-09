@@ -1,6 +1,9 @@
 import React, { useState } from "react";
 import { StatusBar } from "react-native";
 
+import { useFirebaseContext } from "../../context/FirebaseContext";
+import { useUserContext } from "../../context/UserContext";
+
 import HeaderGraphics from "../../components/HeaderGraphics";
 import Text from "../../components/Text";
 import InputField from "../../components/InputField";
@@ -14,8 +17,27 @@ const SignUpScreen = ({ navigation }) => {
   const [email, setEmail] = useState(null);
   const [password, setPassword] = useState(null);
   const [profilePhoto, setProfilePhoto] = useState(null);
+  const [loading, setLoading] = useState(false);
+
+  const FirebaseAPI = useFirebaseContext();
+  const [_, setUser] = useUserContext();
 
   const navigateToSignInScreen = () => navigation.navigate("SignIn");
+
+  const handleSignUp = async () => {
+    setLoading(true);
+
+    const user = { username, email, password, profilePhoto };
+
+    try {
+      const createdUser = await FirebaseAPI.createUser(user);
+
+      setUser({ ...createdUser, isLoggedIn: true });
+      setLoading(false);
+    } catch (err) {
+      console.log(`Error while trying to create user`);
+    }
+  };
 
   return (
     <Container>
@@ -53,7 +75,11 @@ const SignUpScreen = ({ navigation }) => {
           />
         </AuthSection>
 
-        <SignButton text="Criar conta" />
+        <SignButton
+          text="Criar conta"
+          signMethod={handleSignUp}
+          isLoading={loading}
+        />
 
         <SignInOption onPress={navigateToSignInScreen}>
           <Text center small>

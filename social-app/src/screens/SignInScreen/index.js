@@ -11,6 +11,7 @@ import { Container, Main, AuthSection, SignUpOption } from "./styles";
 const SignInScreen = ({ navigation }) => {
   const [email, setEmail] = useState(null);
   const [password, setPassword] = useState(null);
+  const [loading, setLoading] = useState(false);
 
   const navigateToSignUpScreen = () => navigation.navigate("SignUp");
 
@@ -38,7 +39,7 @@ const SignInScreen = ({ navigation }) => {
             setInputChange={setPassword}
           />
         </AuthSection>
-        <SignButton text="Entrar" />
+        <SignButton text="Entrar" isLoading={loading} />
 
         <SignUpOption onPress={navigateToSignUpScreen}>
           <Text center small>
